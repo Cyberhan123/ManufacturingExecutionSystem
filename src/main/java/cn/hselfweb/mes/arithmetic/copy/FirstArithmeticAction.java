@@ -14,8 +14,6 @@ public class FirstArithmeticAction {
     public static String execute() throws Exception {
         //加载数据
         XLList data = XLList.Load();
-
-
         //====================所有设备================
         int DeviceNumber = data.getDeviceNumber();
         //list_sum(i)(j)  表示第j+1个工件的第i+1道工序

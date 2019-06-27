@@ -2,18 +2,23 @@ package cn.hselfweb.mes.enity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.sql.Date;
 
-
-
-
 @Data
+@Table(name = "StaffState")
+@Entity
 public class StaffState {
-		private	int id;
-		private	int sId;	
-		private	String	state;
-		private	String startTime;
-		private	String	endTime;
-		private	String	upTime;
+    @Id
+    @GeneratedValue
+    private Long id;
+    private Long sId;
+    private String state;
+    private String startTime;
+    private String endTime;
+    private String upTime;
 
-		}		
+}

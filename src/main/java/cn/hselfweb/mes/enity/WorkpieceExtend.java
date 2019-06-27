@@ -3,11 +3,20 @@ package cn.hselfweb.mes.enity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 @Data
 public class WorkpieceExtend {
-		private	int id;
-		private String num;
-		private int wId;
-		private int mrpbId;
-		private String type;
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String num;
+    private Long wId;
+    private Long mrpbId;
+    private String type;
 }

@@ -3,7 +3,6 @@ package cn.hselfweb.mes.arithmetic.GA.copy;
 import cn.hselfweb.mes.arithmetic.GA.linkedlist.DoubleLinkedList;
 import cn.hselfweb.mes.enity.CraftExtend;
 import cn.hselfweb.mes.enity.Device;
-import com.mes.service.CraftExtendService;
 
 import java.util.*;
 
@@ -17,7 +16,7 @@ import java.util.*;
 	private int T[][];
 	private int JM[][];//后被赋值为0
 	private int JMM[][];
-	private CraftExtendService ceService;
+//	private CraftExtendService ceService;
 	private List<DoubleLinkedList> dlllist;
 	private List<Device> listcj;
 	private List<List<CraftExtend>> listgx;
@@ -185,7 +184,7 @@ import java.util.*;
 	public List<Device> decodeGene(){
 		for(List<CraftExtend> lce:listgx){
 			for(CraftExtend ce:lce){
-				ce.setBendtime(0);
+//				ce.setBendtime(0);
 				ce.setEndtime(0);
 			}
 			
@@ -769,13 +768,13 @@ import java.util.*;
 		
 	}
 
-	public CraftExtendService getCeService() {
-		return ceService;
-	}
-
-	public void setCeService(CraftExtendService ceService) {
-		this.ceService = ceService;
-	}
+//	public CraftExtendService getCeService() {
+//		return ceService;
+//	}
+//
+//	public void setCeService(CraftExtendService ceService) {
+//		this.ceService = ceService;
+//	}
 
 	
 }

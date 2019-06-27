@@ -1,18 +1,10 @@
 package cn.hselfweb.mes.arithmetic.GA;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-
+import cn.hselfweb.mes.arithmetic.GA.linkedlist.DoubleLinkedList;
 import cn.hselfweb.mes.enity.CraftExtend;
 import cn.hselfweb.mes.enity.Device;
-import cn.hselfweb.mes.arithmetic.GA.linkedlist.DoubleLinkedList;
-import com.mes.arithmetic.GA.linkedlist.DoubleLinkedList;
-import com.mes.entity.CraftExtend;
-import com.mes.entity.Device;
-import com.mes.service.CraftExtendService;
+
+import java.util.*;
 
  class JobScheduleIndividualTest extends Individual {
 	
@@ -24,7 +16,7 @@ import com.mes.service.CraftExtendService;
 	private int T[][];
 	private int JM[][];//后被赋值为0
 	private int JMM[][];
-	private CraftExtendService ceService;
+	//private CraftExtendService ceService;
 	private List<DoubleLinkedList> dlllist;
 	private List<Device> listcj;
 	private List<List<CraftExtend>> listgx;
@@ -192,7 +184,7 @@ import com.mes.service.CraftExtendService;
 	public List<Device> decodeGene(){
 		for(List<CraftExtend> lce:listgx){
 			for(CraftExtend ce:lce){
-				ce.setBendtime(0);
+//				ce.setBendtime(0);
 				ce.setEndtime(0);
 			}
 			
@@ -776,13 +768,13 @@ import com.mes.service.CraftExtendService;
 		
 	}
 
-	public CraftExtendService getCeService() {
-		return ceService;
-	}
-
-	public void setCeService(CraftExtendService ceService) {
-		this.ceService = ceService;
-	}
+//	public CraftExtendService getCeService() {
+//		return ceService;
+//	}
+//
+//	public void setCeService(CraftExtendService ceService) {
+//		this.ceService = ceService;
+//	}
 
 	
 }

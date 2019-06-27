@@ -3,15 +3,24 @@ package cn.hselfweb.mes.enity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Data
+@Entity
+@Table(name = "WorkpiecePurchase")
 public class WorkpiecePurchase {
-	private int id;
-	private String num;
-	private int wrId;
-	private String type;
-	private String weNum;
-	private int ceId;
-	private String startTime;
-	private String endTime;
-	private int mrpbId;
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String num;
+    private Long wrId;
+    private String type;
+    private String weNum;
+    private Long ceId;
+    private String startTime;
+    private String endTime;
+    private Long mrpbId;
 }

@@ -3,6 +3,7 @@ package cn.hselfweb.mes.arithmetic.entity;
 import cn.hselfweb.mes.enity.CraftExtend;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import lombok.Data;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,26 +11,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class XLList {
     private static final String dataPath = "data.json";
     private int DeviceNumber;
     private List<List<CraftExtend>> list_sum = new ArrayList<List<CraftExtend>>();
-
-    public int getDeviceNumber() {
-        return DeviceNumber;
-    }
-
-    public void setDeviceNumber(int deviceNumber) {
-        DeviceNumber = deviceNumber;
-    }
-
-    public List<List<CraftExtend>> getList_sum() {
-        return list_sum;
-    }
-
-    public void setList_sum(List<List<CraftExtend>> list_sum) {
-        this.list_sum = list_sum;
-    }
 
     /**
      * 实例化  调度工序列表

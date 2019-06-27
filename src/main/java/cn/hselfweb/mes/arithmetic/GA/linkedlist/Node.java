@@ -2,7 +2,6 @@ package cn.hselfweb.mes.arithmetic.GA.linkedlist;
 
 import cn.hselfweb.mes.enity.CraftExtend;
 
-//import com.hrbust.arithmetic.GA.GongXu;
 
 
 
