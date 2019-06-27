@@ -8,15 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Date;
 
+/**
+ * 设备状态
+ * id，设备id，设备所属
+ */
 @Data
 @Entity
 @Table(name = "DeviceState")
-
 public class DeviceState {
     @Id
     @GeneratedValue
-    private Long id;
-    private Long dId;
+    private Long deviceStateid;
+    private Long deviceId;
     private Long weId;
     private Long ceId;
     private int state;

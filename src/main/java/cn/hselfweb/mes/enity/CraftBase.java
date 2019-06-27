@@ -8,13 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+ * 基本工艺表
+ * 编号，工艺名称，工作车间，耗费时间
+ */
 @Data
 @Entity
 @Table(name = "CraftBase")
 public class CraftBase {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long craftBaseId;
     private String name;
     private Long wid;
     private Date time;

@@ -10,23 +10,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.List;
 
-
+/**
+ * 工序中间表
+ * 序列版本编号，
+ * id，
+ * 工序id，
+ * 产品id，
+ */
 @Data
 @Entity
 @Table(name = "CraftExtend")
-
 public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend> {
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
-    private Long id;
-    private Long cbId;
-    private Long pid;
-    private Integer paId;
-    private Integer pbId;
+    private Long craftExtendId;
+    private Long craftBaseId;
+    private Long procedureId;
+    private Long paId;
+    private Long pbId;
     private int priority;
     private CraftExtend extendCraftByAftEcId;
     private CraftExtend extendCraftByPreEcId;
@@ -39,7 +41,7 @@ public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend
     private String gname;// 工序名称
     private int time;// 加工时间
     private String device;// 占用设备
-    private List<CraftExtend> list;//设备所在的工序序列
+    //private List<CraftExtend> list;//设备所在的工序序列
     private int gid;//工件中的第几道工序
     private int did;//在设备上位于第几道工序
     private double xiaolv;// 效率函数
@@ -87,6 +89,13 @@ public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend
     @Override
     public int compareTo(CraftExtend o) {
         return 0;
+    }
+
+    public void setList(List<CraftExtend> craftExtends) {
+    }
+
+    public List<CraftExtend> getList() {
+        return null;
     }
 
 //    public void setBegintime(int i) {

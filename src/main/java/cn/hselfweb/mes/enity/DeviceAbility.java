@@ -7,16 +7,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ *设备能力
+ * id，设备id，
+ */
 @Data
 @Entity
 @Table(name = "DeviceAbility")
-
 public class DeviceAbility {
     @Id
     @GeneratedValue
-    private Long id;
-    private Long dId;
-    private String dName;
+    private Long deviceAbilityId;
+    private Long deviceId;
+    private String Name;
     private Long ptId;
     private double accuracy;
     private String priority;
