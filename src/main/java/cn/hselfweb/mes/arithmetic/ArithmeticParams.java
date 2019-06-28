@@ -1,4 +1,4 @@
-package cn.hselfweb.mes.arithmetic.pojo;
+package cn.hselfweb.mes.arithmetic;
 
 import cn.hselfweb.mes.enity.CraftExtend;
 

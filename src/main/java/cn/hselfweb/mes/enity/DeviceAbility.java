@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- *设备能力
+ * 设备能力
  * id，设备id，
  */
 @Data
@@ -20,7 +20,7 @@ public class DeviceAbility {
     private Long deviceAbilityId;
     private Long deviceId;
     private String Name;
-    private Long ptId;
+    private Long procedureTypeId;
     private double accuracy;
     private String priority;
 }

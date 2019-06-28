@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Workcenter {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long WorkcenterId;
     private String name;
     private String info;
     private int replace;

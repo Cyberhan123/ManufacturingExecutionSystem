@@ -18,11 +18,11 @@ import javax.persistence.Table;
 public class MRPBase {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long MRPBaseId;
     private int type;
     private Date startTime;
     private Date endTime;
     private double price;
     private String remark;
-    private List<MRPExtend> mrpExtends;
+    //private List<MRPExtend> mrpExtends;
 }

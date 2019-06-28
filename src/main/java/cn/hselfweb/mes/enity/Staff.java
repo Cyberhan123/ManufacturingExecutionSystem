@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Staff {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long StaffId;
     private String name;
     private String sex;
     private Long age;

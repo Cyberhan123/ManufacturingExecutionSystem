@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class WorkpieceExtend {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long WorkpieceExtendId;
     private String num;
     private Long wId;
     private Long mrpbId;

@@ -1,4 +1,6 @@
 spring:
+  mvc:
+    static-path-pattern: /static/**
   datasource:
     url: jdbc:mysql://hselfweb.cn:3306/mes?serverTimezone=CTT
     username: mes

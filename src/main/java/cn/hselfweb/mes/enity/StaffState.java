@@ -14,7 +14,7 @@ import java.sql.Date;
 public class StaffState {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long StaffStateId;
     private Long sId;
     private String state;
     private String startTime;

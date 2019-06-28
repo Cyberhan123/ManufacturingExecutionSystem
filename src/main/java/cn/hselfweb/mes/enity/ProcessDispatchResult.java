@@ -18,16 +18,16 @@ public class ProcessDispatchResult implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
-    private Long id;
-    private MRPBase mrpBase;
-    private CraftExtend extendCraft;
-    private Workpiece workpiece;
-    private Staff person;
-    private Device baseDevice;
+    private Long processDispatchResultId;
+//    private MRPBase mrpBase;
+//    private CraftExtend extendCraft;
+//    private Workpiece workpiece;
+//    private Staff person;
+//    private Device baseDevice;
     private Integer pdrStartTimeP;
     private Integer pdrEndTimeP;
-    private CraftExtend pdrPreEc;
+//    private CraftExtend pdrPreEc;
     private Integer pdrPreEcTime;
-    private CraftExtend pdrAftEc;
+//    private CraftExtend pdrAftEc;
     private Integer pdrAftEcTime;
 }

@@ -14,8 +14,8 @@ import java.util.Date;
 public class MRPExtend {
     @Id
     @GeneratedValue
-    private Long id;
-    private Long mrpbId;
+    private Long MRPExtendId;
+    private Long MRPEBaseId;
     private Long wid;
     private int count;
     private Date startTime;

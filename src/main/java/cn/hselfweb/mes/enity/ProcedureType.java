@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class ProcedureType {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long ProcedureTypeId;
 	private Long did;   //
 	private String name;
 	private Integer avgTime;

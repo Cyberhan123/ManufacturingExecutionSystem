@@ -4,7 +4,6 @@ package cn.hselfweb.mes.arithmetic;
 
 
 
-
 public class ArithmeticFactory {
 	private static ArithmeticFactory factoryInstance = null;
 	

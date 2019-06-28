@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class StaffAbility {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long StaffAbilityId;
     private Long sId;
     private Long ptId;
     private String grade;

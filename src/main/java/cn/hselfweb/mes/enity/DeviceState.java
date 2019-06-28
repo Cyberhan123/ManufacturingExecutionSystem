@@ -18,10 +18,10 @@ import java.sql.Date;
 public class DeviceState {
     @Id
     @GeneratedValue
-    private Long deviceStateid;
+    private Long deviceStateId;
     private Long deviceId;
-    private Long weId;
-    private Long ceId;
+    private Long workpieceExtendId;
+    private Long craftExtendId;
     private int state;
     private Date startTime;
     private Date endTime;
@@ -29,6 +29,6 @@ public class DeviceState {
     private Date pEndTime;
     private Date rStartTime;
     private Date rEndTime;
-    private Long sId;
+    private Long staffId;
     private Date upTime;
 }

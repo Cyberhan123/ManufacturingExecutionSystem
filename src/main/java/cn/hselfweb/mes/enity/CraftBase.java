@@ -20,6 +20,6 @@ public class CraftBase {
     @GeneratedValue
     private Long craftBaseId;
     private String name;
-    private Long wid;
+    private Long workpieceId;
     private Date time;
 }

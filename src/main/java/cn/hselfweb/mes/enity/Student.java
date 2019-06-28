@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Student {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long StudentId;
     private String sno;
     private String sname;
     private int sage;

@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Workpiece {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long WorkpieceId;
     private String name;
     private int avgTime;
     private int maxTime;

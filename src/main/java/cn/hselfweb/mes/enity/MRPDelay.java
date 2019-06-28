@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class MRPDelay {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long MRPDelayId;
     private Long mrpbId;
     private double base;
     private float factor;

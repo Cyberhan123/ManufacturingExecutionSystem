@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Procedure {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long ProcedureId;
     private Long ptId;
     private Long cbId;
 }
