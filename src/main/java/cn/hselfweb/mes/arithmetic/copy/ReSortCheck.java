@@ -1,9 +1,12 @@
-package cn.hselfweb.mes.arithmetic;
-
-import cn.hselfweb.mes.enity.CraftExtend;
+package cn.hselfweb.mes.arithmetic.copy;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.hselfweb.mes.arithmetic.pojo.FreeTimeByExtendCraft;
+import cn.hselfweb.mes.enity.CraftExtend;
+import com.mes.arithmetic.pojo.FreeTimeByExtendCraft;
+import com.mes.entity.CraftExtend;
 
 public class ReSortCheck {
 /*该类用调节算法的排序中所包含的算法函数*/

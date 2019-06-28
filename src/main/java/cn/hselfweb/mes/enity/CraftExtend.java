@@ -58,4 +58,8 @@ public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend
     //TODO:要写设置链表
     public void setList(List<CraftExtend> craftExtends) {
     }
+
+    public List<CraftExtend> getList() {
+        return null;
+    }
 }

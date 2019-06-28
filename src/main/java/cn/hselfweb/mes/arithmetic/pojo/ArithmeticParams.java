@@ -1,9 +1,10 @@
-package cn.hselfweb.mes.arithmetic;
-
-import cn.hselfweb.mes.enity.CraftExtend;
+package cn.hselfweb.mes.arithmetic.pojo;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.hselfweb.mes.enity.CraftExtend;
+import com.mes.entity.CraftExtend;
 
 public abstract class ArithmeticParams {
      //算法库中的算法参数的抽象类，抽象类中存放各个算法所需要的共同的参数和方法，如工作重心等

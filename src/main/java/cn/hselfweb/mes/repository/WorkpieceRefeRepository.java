@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface WorkpieceRefeRepository extends JpaRepository<WorkpieceRefe, Long> {
     Workpiece findWorkpieceRefeByWorkpieceRefeId(Long id);
 
+    Workpiece findWorkpieceRefesByWId(Long id);
 }
 

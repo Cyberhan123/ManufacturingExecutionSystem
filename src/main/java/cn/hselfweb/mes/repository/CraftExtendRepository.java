@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface CraftExtendRepository extends JpaRepository<CraftExtend, Long> {
     List<CraftExtend> findCraftExtendsByCraftBaseId(Long id);
-CraftExtend findCraftExtendsByPbId(Long id);
+
+    CraftExtend findCraftExtendsByPbId(Long id);
+
+    CraftExtend findCraftExtendsByPaId(Long id);
 }

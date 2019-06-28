@@ -1,11 +1,16 @@
-package cn.hselfweb.mes.arithmetic;
-
-import cn.hselfweb.mes.enity.CraftExtend;
+package cn.hselfweb.mes.arithmetic.copy;
 
 import java.util.List;
 
+import cn.hselfweb.mes.enity.CraftExtend;
+import com.mes.entity.CraftExtend;
+/*
+ * 
+ * 该类用于初次算法的排序中所包含的算法函数
+ * 
+ * */
 public class SortCheck {
-/*该类用于初次算法的排序中所包含的算法函数*/
+
 	//设备的第一道工序(工件序列中的第一道工序)
 	public void FirstDevice_FirstCraft(Integer j, Integer i, CraftExtend ec, List<List<CraftExtend>> listM_base_sum, int shunxu){
 		
@@ -44,7 +49,7 @@ public class SortCheck {
 		ec.setBegintime(ec.getExtendCraftByPreEcId().getEndtime());		
 		ec.setEndtime(ec.getExtendCraftByPreEcId().getEndtime() + ec.getTime()); 
 		listM_base_sum.get(shunxu - 1).add(ec);// 若为该设备的第一道工序，则必须在前一道工序完成的基础上加工
-		System.out.println("开始时间" +ec.getExtendCraftByPreEcId().getEndtime()+ "结束时间"+ec.getExtendCraftByPreEcId().getEndtime() + ec.getTime());
+		System.out.println("开始时间" +ec.getExtendCraftByPreEcId().getEndtime()+ "结束时间"+(ec.getExtendCraftByPreEcId().getEndtime() + ec.getTime()));
 		System.out.println("设备" + shunxu
 				+ "工序未成功，为该设备的第一道工序");
 	/*	//添加后道工序的前道工序信息
