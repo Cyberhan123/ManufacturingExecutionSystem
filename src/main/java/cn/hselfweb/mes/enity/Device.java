@@ -21,14 +21,5 @@ public class Device {
     private Integer time;
     private Long wcId;
     private String remark;
-    //算法所需
-//
-//    private List<CraftExtend> listgx = new ArrayList<>();//工序队列
-//    private List<CraftExtend> listalreadygx = new ArrayList<>();//工序队列。GA算法中使用
-    // Constructors
-//    private int beginTime;//动态调度时设备的开始加工时间
-//
-//    public <E> List getListgx() {
-//        return null;
-//    }
+
 }

@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(name = "CraftBase")
+@Table(name = "CraftExtend")
 public class CraftBase {
     @Id
     @GeneratedValue

@@ -10,5 +10,7 @@ public interface CraftExtendRepository extends JpaRepository<CraftExtend, Long> 
 
     CraftExtend findCraftExtendsByPbId(Long id);
 
+    CraftExtend findCraftExtendsByProcedureId(Long id);
+
     CraftExtend findCraftExtendsByPaId(Long id);
 }
