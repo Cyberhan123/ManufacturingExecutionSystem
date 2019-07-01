@@ -17,7 +17,6 @@ import java.util.List;
  * 工序id，
  * 产品id，
  */
-@Data
 @Entity
 @Table(name = "CraftExtend")
 public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend> {
@@ -61,5 +60,165 @@ public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend
 
     public List<CraftExtend> getList() {
         return null;
+    }
+
+    public Long getCraftExtendId() {
+        return craftExtendId;
+    }
+
+    public void setCraftExtendId(Long craftExtendId) {
+        this.craftExtendId = craftExtendId;
+    }
+
+    public Long getCraftBaseId() {
+        return craftBaseId;
+    }
+
+    public void setCraftBaseId(Long craftBaseId) {
+        this.craftBaseId = craftBaseId;
+    }
+
+    public Long getProcedureId() {
+        return procedureId;
+    }
+
+    public void setProcedureId(Long procedureId) {
+        this.procedureId = procedureId;
+    }
+
+    public Long getPaId() {
+        return paId;
+    }
+
+    public void setPaId(Long paId) {
+        this.paId = paId;
+    }
+
+    public Long getPbId() {
+        return pbId;
+    }
+
+    public void setPbId(Long pbId) {
+        this.pbId = pbId;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public CraftExtend getExtendCraftByAftEcId() {
+        return extendCraftByAftEcId;
+    }
+
+    public void setExtendCraftByAftEcId(CraftExtend extendCraftByAftEcId) {
+        this.extendCraftByAftEcId = extendCraftByAftEcId;
+    }
+
+    public CraftExtend getExtendCraftByPreEcId() {
+        return extendCraftByPreEcId;
+    }
+
+    public void setExtendCraftByPreEcId(CraftExtend extendCraftByPreEcId) {
+        this.extendCraftByPreEcId = extendCraftByPreEcId;
+    }
+
+    public Long getBmrpId() {
+        return bmrpId;
+    }
+
+    public void setBmrpId(Long bmrpId) {
+        this.bmrpId = bmrpId;
+    }
+
+    public String getWpname() {
+        return wpname;
+    }
+
+    public void setWpname(String wpname) {
+        this.wpname = wpname;
+    }
+
+    public Long getWpid() {
+        return wpid;
+    }
+
+    public void setWpid(Long wpid) {
+        this.wpid = wpid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGname() {
+        return gname;
+    }
+
+    public void setGname(String gname) {
+        this.gname = gname;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public String getDevice() {
+        return device;
+    }
+
+    public void setDevice(String device) {
+        this.device = device;
+    }
+
+    public int getGid() {
+        return gid;
+    }
+
+    public void setGid(int gid) {
+        this.gid = gid;
+    }
+
+    public int getDid() {
+        return did;
+    }
+
+    public void setDid(int did) {
+        this.did = did;
+    }
+
+    public double getXiaolv() {
+        return xiaolv;
+    }
+
+    public void setXiaolv(double xiaolv) {
+        this.xiaolv = xiaolv;
+    }
+
+    public int getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(int endtime) {
+        this.endtime = endtime;
+    }
+
+    public int getBegintime() {
+        return begintime;
+    }
+
+    public void setBegintime(int begintime) {
+        this.begintime = begintime;
     }
 }

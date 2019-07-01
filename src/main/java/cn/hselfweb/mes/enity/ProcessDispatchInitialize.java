@@ -26,4 +26,24 @@ public class ProcessDispatchInitialize implements java.io.Serializable {
     //private Staff staff;
     //private Device device;
     private Integer pdiTotalTime;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getPdiId() {
+        return pdiId;
+    }
+
+    public void setPdiId(Long pdiId) {
+        this.pdiId = pdiId;
+    }
+
+    public Integer getPdiTotalTime() {
+        return pdiTotalTime;
+    }
+
+    public void setPdiTotalTime(Integer pdiTotalTime) {
+        this.pdiTotalTime = pdiTotalTime;
+    }
 }

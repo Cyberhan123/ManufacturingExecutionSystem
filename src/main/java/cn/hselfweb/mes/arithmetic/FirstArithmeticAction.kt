@@ -5,6 +5,7 @@ import cn.hselfweb.mes.arithmetic.entity.DeviceTime
 import cn.hselfweb.mes.arithmetic.pojo.FirstArithmeticParams
 import cn.hselfweb.mes.enity.*
 import cn.hselfweb.mes.repository.*
+import org.springframework.beans.factory.annotation.Autowired
 import java.util.*
 import javax.servlet.ServletContext
 import javax.servlet.http.HttpServletRequest
@@ -14,16 +15,26 @@ class FirstArithmeticAction {
     private var request: HttpServletRequest? = null
     private var session: HttpSession? = null
     private var application: ServletContext? = null
+    @Autowired
+    lateinit var mrpBaseRepository: MRPBaseRepository
+    @Autowired
+    lateinit var mrpExtendRepository: MRPExtendRepository
+    @Autowired
+    lateinit var craftBaseRepository: CraftBaseRepository
+    @Autowired
+    lateinit var craftExtendRepository: CraftExtendRepository
+    @Autowired
+    lateinit var procedureRepository: ProcedureRepository
+    @Autowired
+    lateinit var procedureTypeRepository: ProcedureTypeRepository
+    @Autowired
+    lateinit var workpieceRepository: WorkpieceRepository
+    @Autowired
+    lateinit var deviceRepository: DeviceRepository
 
-    var mrpBaseRepository: MRPBaseRepository? = null
-    var mrpExtendRepository: MRPExtendRepository? = null
-    var craftBaseRepository: CraftBaseRepository? = null
-    var craftExtendRepository: CraftExtendRepository? = null
-    private var procedureRepository: ProcedureRepository? = null
-    var procedureTypeRepository: ProcedureTypeRepository? = null
+
     var w: Workpiece? = null
-    private var workpieceRepository: WorkpieceRepository? = null
-    private var deviceRepository: DeviceRepository? = null
+
 
     //    @Throws(Exception::class)
     fun execute(): String {
@@ -231,7 +242,7 @@ class FirstArithmeticAction {
                 }
             }
             //TODO：这块有问题
-           // Idd++
+            // Idd++
         }
 
         //list_sum.get(1).get(0).setEndtime(888);    //只可查到已有    数据

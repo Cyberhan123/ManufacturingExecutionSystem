@@ -16,4 +16,28 @@ public class Procedure {
     private Long ProcedureId;
     private Long ptId;
     private Long cbId;
+
+    public Long getProcedureId() {
+        return ProcedureId;
+    }
+
+    public void setProcedureId(Long procedureId) {
+        ProcedureId = procedureId;
+    }
+
+    public Long getPtId() {
+        return ptId;
+    }
+
+    public void setPtId(Long ptId) {
+        this.ptId = ptId;
+    }
+
+    public Long getCbId() {
+        return cbId;
+    }
+
+    public void setCbId(Long cbId) {
+        this.cbId = cbId;
+    }
 }

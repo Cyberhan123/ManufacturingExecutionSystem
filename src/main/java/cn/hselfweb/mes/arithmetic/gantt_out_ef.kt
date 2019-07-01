@@ -39,7 +39,7 @@ class gantt_out_ef {
                 } else {
                     sBuffer.append(",\r  {\r	\"EndDate\" : \"")
                 }
-                var t = listdt[i].deviceTime + 1
+                var t = listdt[i].deviceTime!! +1
                 var mm = 5
                 if (t > 30) {
                     mm = mm + t / 30

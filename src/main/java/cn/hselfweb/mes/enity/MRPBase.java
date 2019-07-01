@@ -25,4 +25,52 @@ public class MRPBase {
     private double price;
     private String remark;
     //private List<MRPExtend> mrpExtends;
+
+    public Long getMRPBaseId() {
+        return MRPBaseId;
+    }
+
+    public void setMRPBaseId(Long MRPBaseId) {
+        this.MRPBaseId = MRPBaseId;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 }

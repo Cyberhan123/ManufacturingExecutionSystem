@@ -21,4 +21,60 @@ public class WorkpieceRefe {
     private double price;
     private String leadTime;
     private String uptime;
+
+    public Long getWorkpieceRefeId() {
+        return WorkpieceRefeId;
+    }
+
+    public void setWorkpieceRefeId(Long workpieceRefeId) {
+        WorkpieceRefeId = workpieceRefeId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Long getwId() {
+        return wId;
+    }
+
+    public void setwId(Long wId) {
+        this.wId = wId;
+    }
+
+    public Long getCeId() {
+        return ceId;
+    }
+
+    public void setCeId(Long ceId) {
+        this.ceId = ceId;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getLeadTime() {
+        return leadTime;
+    }
+
+    public void setLeadTime(String leadTime) {
+        this.leadTime = leadTime;
+    }
+
+    public String getUptime() {
+        return uptime;
+    }
+
+    public void setUptime(String uptime) {
+        this.uptime = uptime;
+    }
 }
