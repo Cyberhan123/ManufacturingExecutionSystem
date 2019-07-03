@@ -39,7 +39,7 @@ class gantt_out_ef {
                 } else {
                     sBuffer.append(",\r  {\r	\"EndDate\" : \"")
                 }
-                var t = listdt[i].deviceTime!! +1
+                var t = listdt[i].deviceTime!! + 1
                 var mm = 5
                 if (t > 30) {
                     mm = mm + t / 30
@@ -147,7 +147,9 @@ class gantt_out_ef {
             sBuffer2.append("\r]")
             val ServerMess = sBuffer.toString()
             val ServerMess2 = sBuffer2.toString()
-            //JSONObject jsonObj = new JSONObject(ServerMess);
+            println(ServerMess)
+            println(ServerMess2)
+            // JSONObject jsonObj = new JSONObject(ServerMess);
 //            val root = ServletActionContext.getServletContext().getRealPath("/ext-gantt/examples/advanced/t")
 //            val root1 = ServletActionContext.getServletContext().getRealPath("/ext-gantt/examples/advanced/d")
 //            gantt_out_ef.createFile(root, "asks.json", ServerMess)

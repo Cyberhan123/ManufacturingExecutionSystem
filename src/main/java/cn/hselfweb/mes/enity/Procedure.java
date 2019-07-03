@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
+
 @Entity
 @Table(name = "Procedure")
 public class Procedure {

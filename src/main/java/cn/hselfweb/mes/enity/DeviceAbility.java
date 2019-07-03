@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * 设备能力
  * id，设备id，
  */
-@Data
+
 @Entity
 @Table(name = "DeviceAbility")
 public class DeviceAbility {

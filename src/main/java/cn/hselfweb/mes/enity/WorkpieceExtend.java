@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-@Data
+
 public class WorkpieceExtend {
     @Id
     @GeneratedValue

@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
+
 @Table(name = "Workpiece")
 @Entity
 public class Workpiece {

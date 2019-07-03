@@ -11,18 +11,18 @@ class ReSortCheck {
         val lists_freetime = ArrayList<FreeTimeByExtendCraft>()
         for (l in listM_base_sum) {// 遍历所有的工序，找到所有的空闲时间
             for (g in l) {
-                if (g.getDid() !== l.size) {
-                    if (g.getEndtime() !== l[g.getDid()].getBegintime()) {// 下一道工序的开始的时间不等于本道工序的结束时间
+                if (g.did !== l.size) {
+                    if (g.endtime !== l[g.did].begintime) {// 下一道工序的开始的时间不等于本道工序的结束时间
                         val ft = FreeTimeByExtendCraft()
-                        //TODO:这块是我注释的
-//                        ft.setDevice(g.getDevice())
-//                        ft.setListdevice(l)
-//                        ft.setDid(l[g.getDid()].getDid())
-//                        ft.setBegintime(g.getEndtime())
-//                        ft.setEndtime(l[g.getDid()].getBegintime())
-//                        ft.setTime(ft.getEndtime() - ft.getBegintime())
-//                        ft.setPregongxu(g)// 同一设备上的前一道工序
-//                        ft.setPostgongxu(l[g.getDid()])// 同一设备上的后一道工序
+                        //TODO:这块应该可用了
+                        ft.device = g.device
+                        ft.listdevice = l
+                        ft.did = l[g.did].did
+                        ft.begintime = g.endtime
+                        ft.endtime = l[g.did].begintime
+                        ft.time = ft.endtime - ft.begintime
+                        ft.pregongxu = g// 同一设备上的前一道工序
+                        ft.postgongxu = l[g.did]// 同一设备上的后一道工序
                         lists_freetime.add(ft)
                     }
                 }
@@ -152,27 +152,27 @@ class ReSortCheck {
 
     // 如果交换后的工序的开始时间>同工件的前一道工序的结束时间(可以直接交换)
     fun ChangeStatus1(f: FreeTimeByExtendCraft, pregongxu: CraftExtend, postgongxu: CraftExtend, listM: List<CraftExtend>) {
-        val postbegintime = postgongxu.getBegintime()//临时存储后一道工序的开始时间
-        val postendtime = postgongxu.getEndtime()//临时存储后一道工序的结束时间
-        val prebegintime = pregongxu.getBegintime()//临时存储前一道工序的开始时间
-        val preendtime = pregongxu.getEndtime()//临时存储前一道工序的结束时间
-        postgongxu.setBegintime(f.begintime)
-        postgongxu.setEndtime(f.begintime + listM[f.postgongxu!!.did].getTime())
-        if (pregongxu.getExtendCraftByPreEcId().getEndtime() < postgongxu.getEndtime()) {//这里还需要判断pregongxu交换后是否能够直接接在postgongxu后而不需要产生缝隙
+        val postbegintime = postgongxu.begintime//临时存储后一道工序的开始时间
+        val postendtime = postgongxu.endtime//临时存储后一道工序的结束时间
+        val prebegintime = pregongxu.begintime//临时存储前一道工序的开始时间
+        val preendtime = pregongxu.endtime//临时存储前一道工序的结束时间
+        postgongxu.begintime = f.begintime
+        postgongxu.endtime = f.begintime + listM[f.postgongxu!!.did].time
+        if (pregongxu.extendCraftByPreEcId.endtime < postgongxu.endtime) {//这里还需要判断pregongxu交换后是否能够直接接在postgongxu后而不需要产生缝隙
             //不需要产生缝隙
-            pregongxu.setBegintime(postgongxu.getEndtime())
-            pregongxu.setEndtime(postgongxu.getEndtime() + pregongxu.getTime())
+            pregongxu.begintime = postgongxu.endtime
+            pregongxu.endtime = postgongxu.endtime + pregongxu.time
         } else {
             //需要产生缝隙
-            pregongxu.setBegintime(pregongxu.getExtendCraftByPreEcId().getEndtime())
-            pregongxu.setEndtime(pregongxu.getExtendCraftByPreEcId().getEndtime() + pregongxu.getTime())
+            pregongxu.begintime = pregongxu.extendCraftByPreEcId.endtime
+            pregongxu.endtime = pregongxu.extendCraftByPreEcId.endtime + pregongxu.time
         }
 
 
         /*测试中，判断交换后第二道工序的结束时间是否小于其同工件后一道工序的开始时间*/
         //			System.out.println("@@@@@@@@@"+pregongxu.getEndtime());
         //			System.out.println("@@@@@@@@@"+pregongxu.getExtendCraftByAftEcId().getEcName());
-        if (pregongxu.getExtendCraftByAftEcId() == null) {
+        if (pregongxu.extendCraftByAftEcId == null) {
             //已经是该工件的最后一道工序，可以不用进行判断
             // 交换did
             val did = this.ChangeDid(pregongxu, postgongxu)
@@ -183,7 +183,7 @@ class ReSortCheck {
             //对后续工序的移动
             MoveTheNext1(f, pregongxu, postgongxu, listM)
         } else {
-            if (pregongxu.getEndtime() < pregongxu.getExtendCraftByAftEcId().begintime) {
+            if (pregongxu.endtime < pregongxu.extendCraftByAftEcId.begintime) {
                 //可以交换
                 // 交换did
                 val did = this.ChangeDid(pregongxu, postgongxu)
@@ -195,10 +195,10 @@ class ReSortCheck {
                 MoveTheNext1(f, pregongxu, postgongxu, listM)
             } else {
                 //交换后将出现问题，该空隙将无法交换
-                pregongxu.setBegintime(prebegintime)
-                pregongxu.setEndtime(preendtime)
-                postgongxu.setBegintime(postbegintime)
-                postgongxu.setEndtime(postendtime)
+                pregongxu.begintime = prebegintime
+                pregongxu.endtime = preendtime
+                postgongxu.begintime = postbegintime
+                postgongxu.endtime = postendtime
             }
         }
     }
@@ -207,28 +207,28 @@ class ReSortCheck {
     //交换将会产生新的间隙
     fun ChangeStatus2(f: FreeTimeByExtendCraft, pregongxu: CraftExtend, postgongxu: CraftExtend, listM: List<CraftExtend>) {
         val postbegintime = postgongxu.begintime//临时存储后一道工序的开始时间
-        val postendtime = postgongxu.getEndtime()//临时存储后一道工序的结束时间
+        val postendtime = postgongxu.endtime//临时存储后一道工序的结束时间
         val prebegintime = pregongxu.begintime//临时存储前一道工序的开始时间
-        val preendtime = pregongxu.getEndtime()//临时存储前一道工序的结束时间
+        val preendtime = pregongxu.endtime//临时存储前一道工序的结束时间
 
         // 交换产生新的空隙
-        postgongxu.setBegintime(postgongxu.getExtendCraftByPreEcId()
-                .getEndtime())
-        postgongxu.setEndtime(postgongxu.begintime + postgongxu.getTime())
+        postgongxu.begintime = postgongxu.extendCraftByPreEcId
+                .endtime
+        postgongxu.endtime = postgongxu.begintime + postgongxu.time
 
-        if (pregongxu.getExtendCraftByPreEcId().getEndtime() < postgongxu.getEndtime()) {//这里还需要判断pregongxu交换后是否能够直接接在postgongxu后而不需要产生缝隙
+        if (pregongxu.extendCraftByPreEcId.endtime < postgongxu.endtime) {//这里还需要判断pregongxu交换后是否能够直接接在postgongxu后而不需要产生缝隙
             //不需要产生缝隙
-            pregongxu.setBegintime(postgongxu.getEndtime())
-            pregongxu.setEndtime(postgongxu.getEndtime() + pregongxu.getTime())
+            pregongxu.begintime = postgongxu.endtime
+            pregongxu.endtime = postgongxu.endtime + pregongxu.time
         } else {
             //需要产生缝隙
-            pregongxu.setBegintime(pregongxu.getExtendCraftByPreEcId().getEndtime())
-            pregongxu.setEndtime(pregongxu.getExtendCraftByPreEcId().getEndtime() + pregongxu.getTime())
+            pregongxu.begintime = pregongxu.extendCraftByPreEcId.endtime
+            pregongxu.endtime = pregongxu.extendCraftByPreEcId.endtime + pregongxu.time
         }
 
 
         /*测试中，判断交换后第二道工序的结束时间是否小于其同工件后一道工序的开始时间*/
-        if (pregongxu.getExtendCraftByAftEcId() == null) {
+        if (pregongxu.extendCraftByAftEcId == null) {
             //已经是该工件的最后一道工序，可以不用进行判断
             // 交换did
             val did = this.ChangeDid(pregongxu, postgongxu)
@@ -240,7 +240,7 @@ class ReSortCheck {
             //对后续工序的移动
             MoveTheNext2(f, pregongxu, postgongxu, listM)
         } else {
-            if (pregongxu.getEndtime() < pregongxu.getExtendCraftByAftEcId().begintime) {
+            if (pregongxu.endtime < pregongxu.extendCraftByAftEcId.begintime) {
                 //可以交换
                 // 交换did
                 val did = this.ChangeDid(pregongxu, postgongxu)
@@ -253,10 +253,10 @@ class ReSortCheck {
                 MoveTheNext2(f, pregongxu, postgongxu, listM)
             } else {
                 //交换后将出现问题，该空隙将无法交换
-                pregongxu.setBegintime(prebegintime)
-                pregongxu.setEndtime(preendtime)
-                postgongxu.setBegintime(postbegintime)
-                postgongxu.setEndtime(postendtime)
+                pregongxu.begintime = prebegintime
+                pregongxu.endtime = preendtime
+                postgongxu.begintime = postbegintime
+                postgongxu.endtime = postendtime
             }
         }
     }

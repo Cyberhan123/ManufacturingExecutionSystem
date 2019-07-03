@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Date;
 
-@Data
+
 @Table(name = "StaffState")
 @Entity
 public class StaffState {

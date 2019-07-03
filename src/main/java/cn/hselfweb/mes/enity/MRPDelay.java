@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
+
 @Entity
 @Table(name = "MRPDelay")
 public class MRPDelay {

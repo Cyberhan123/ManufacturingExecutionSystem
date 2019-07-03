@@ -361,16 +361,16 @@ class FirstArithmeticAction {
         for (d in 1..DeviceNumber) {
             for (ec in resultAA.listM_base_sum[d - 1]) {
                 val pdr = ProcessDispatchResult()
-                //TODO: 这块有问题
-//                pdr.setMrpBase(bmrp)
-//                w = workpieceRepository!!.findWorkpieceById(ec.getWprocedureId())
-//                pdr.setWorkpiece(w)
-//                pdr.setExtendCraft(ec)
-//                pdr.setPdrPreEc(craftExtendRepository!!.findCraftExtendByProperty("CraftExtend", "p_id", String.valueOf(ec.getPbId())))
-//                pdr.setPdrAftEc(craftExtendRepository!!.findCraftExtendByProperty("CraftExtend", "p_id", String.valueOf(ec.procedureId)))
-//                pdr.setPdrPreEcTime(ec.getBegintime())
-//                pdr.setPdrAftEcTime(ec.getEndtime())
-//                pdr.setBaseDevice(deviceRepository!!.findDeviceByDeviceId(procedureTypeRepository!!.findProcedureTypeByProcedureTypeId(procedureRepository!!.findProcedureByProcedureId(ec.procedureId).getPtId()).getDid()))
+                //TODO: 这块不知道有没有完全解决
+                pdr.mrpBase = bmrp
+                w = workpieceRepository.findWorkpieceByWorkpieceId(ec.wpid)
+                pdr.workpiece = w
+                pdr.extendCraft = ec
+                pdr.pdrPreEc = craftExtendRepository.findCraftExtendsByPbId((ec.pbId))
+                pdr.pdrAftEc = craftExtendRepository.findCraftExtendsByProcedureId(ec.procedureId)
+                pdr.pdrPreEcTime = ec.begintime
+                pdr.pdrAftEcTime = ec.endtime
+                pdr.baseDevice = deviceRepository.findDeviceByDeviceId(procedureTypeRepository.findProcedureTypeByProcedureTypeId(procedureRepository.findProcedureByProcedureId(ec.procedureId).ptId).did)
                 //这里可以添加其他信息
                 processDispatchResult.add(pdr)
 

@@ -10,7 +10,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "WorkpieceRefe")
-@Data
 public class WorkpieceRefe {
     @Id
     @GeneratedValue

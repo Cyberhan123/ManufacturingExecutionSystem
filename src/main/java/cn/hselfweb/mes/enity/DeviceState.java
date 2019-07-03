@@ -12,7 +12,7 @@ import java.sql.Date;
  * 设备状态
  * id，设备id，设备所属
  */
-@Data
+
 @Entity
 @Table(name = "DeviceState")
 public class DeviceState {

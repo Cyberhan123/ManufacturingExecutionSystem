@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-@Data
+
 @Entity
 @Table(name = "MRPExtend")
 public class MRPExtend {
