@@ -1,9 +1,7 @@
 package cn.hselfweb.demo
 
-import cn.hselfweb.mes.arithmetic.ArithmeticFactory
 import cn.hselfweb.mes.arithmetic.entity.CraftTime
 import cn.hselfweb.mes.arithmetic.entity.DeviceTime
-import cn.hselfweb.mes.arithmetic.pojo.FirstArithmeticParams
 import cn.hselfweb.mes.enity.CraftExtend
 import cn.hselfweb.mes.enity.ProcessDispatchResult
 import org.junit.Test

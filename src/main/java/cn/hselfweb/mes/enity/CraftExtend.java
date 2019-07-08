@@ -4,11 +4,10 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 工序中间表
@@ -18,8 +17,8 @@ import java.util.List;
  * 产品id，
  */
 @Entity
-@Table(name = "CraftExtend")
-public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend> {
+@Table(name = "craft_extend", schema = "mes", catalog = "")
+public class CraftExtend implements Serializable, Comparable<CraftExtend> {
     //private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
@@ -220,5 +219,95 @@ public class CraftExtend implements java.io.Serializable, Comparable<CraftExtend
 
     public void setBegintime(int begintime) {
         this.begintime = begintime;
+    }
+
+    private int ceId;
+
+    @Id
+    @javax.persistence.Column(name = "ce_id")
+    public int getCeId() {
+        return ceId;
+    }
+
+    public void setCeId(int ceId) {
+        this.ceId = ceId;
+    }
+
+    private Integer cbId;
+
+    @Basic
+    @Column(name = "cb_id")
+    public Integer getCbId() {
+        return cbId;
+    }
+
+    public void setCbId(Integer cbId) {
+        this.cbId = cbId;
+    }
+
+    private Integer pId;
+
+    @Basic
+    @Column(name = "p_id")
+    public Integer getpId() {
+        return pId;
+    }
+
+    public void setpId(Integer pId) {
+        this.pId = pId;
+    }
+
+    private Integer pAId;
+
+    @Basic
+    @Column(name = "p_a_id")
+    public Integer getpAId() {
+        return pAId;
+    }
+
+    public void setpAId(Integer pAId) {
+        this.pAId = pAId;
+    }
+
+    private Integer pBId;
+
+    @Basic
+    @Column(name = "p_b_id")
+    public Integer getpBId() {
+        return pBId;
+    }
+
+    public void setpBId(Integer pBId) {
+        this.pBId = pBId;
+    }
+
+    private Integer cePriority;
+
+    @Basic
+    @Column(name = "ce_priority")
+    public Integer getCePriority() {
+        return cePriority;
+    }
+
+    public void setCePriority(Integer cePriority) {
+        this.cePriority = cePriority;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CraftExtend that = (CraftExtend) o;
+        return ceId == that.ceId &&
+                Objects.equals(cbId, that.cbId) &&
+                Objects.equals(pId, that.pId) &&
+                Objects.equals(pAId, that.pAId) &&
+                Objects.equals(pBId, that.pBId) &&
+                Objects.equals(cePriority, that.cePriority);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ceId, cbId, pId, pAId, pBId, cePriority);
     }
 }
